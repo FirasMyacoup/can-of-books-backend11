@@ -51,7 +51,7 @@ const BookModel = mongoose.model('BookModel', bookSchema);
 
 
 const book1 = new BookModel({
-    title: 'sami yacoup',
+    title: 'sami muhnnad yacoup',
     description: 'the life of a gamer',
     status: 'in process',
     imgURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkDIrfLZiXYpG7hfqOI7xoHlJ4bwAxlALIVX44pyqqtA&s"
@@ -59,7 +59,7 @@ const book1 = new BookModel({
 })
 
 const book2 = new BookModel({
-    title: 'firas yacoup ',
+    title: 'firas muhnnad yacoup ',
     description: 'the life of a programmer.',
     status: 'avaliable',
     imgURL:"https://e7.pngegg.com/pngimages/124/992/png-clipart-programmer-computer-programming-open-programming-language-programmer-furniture-reading.png"
