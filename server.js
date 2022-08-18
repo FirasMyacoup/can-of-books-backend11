@@ -1,56 +1,35 @@
 'use strict';
 
-const bookModel=require('./modules/schema');
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const mongoose=require('mongoose');
+
+const mongoose = require('mongoose');
+
 const app = express();
 app.use(cors());
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 
-mongoose.connect('mongodb://localhost:3000');
+app.use(express.json())
 
-
-function Books(){
-  const first= new Book({
-    title: "first book ",
-  decription:"my code",
-  status:"Old"
-  });
-  const second= new Book({
-    title: "second book",
-  decription:"happy",
-  status:"New"
-  });
-  const third= new Book({
-    title: "third book",
-  decription:"sad",
-  status:"Old"
-  });
-
-  
-
-}
-
-
-
-app.get('/books', (request, response) => {
-  bookModel.Book.find({},(error,data)=>{
-    if(error){
-      response.status(500).send("error ");
-    }
-    else{
-      response.status(200).send(data);
-    }
-  });
-});
-
-app.get('*', (request, response) => {
-
-  response.send('No requests!')
-
+app.get('/test', (request, response) => {
+  response.send('test request received')
 })
 
-app.listen(PORT, () => console.log(`in ${PORT}`));
+// requiring the bookSchema module
+const { handleBookSchema } = require('./modules/BookSchema');
+const { createNewBook } = require('./modules/BookSchema');
+const { deleteBook } = require('./modules/BookSchema');
+const { updateBook } = require('./modules/BookSchema');
+
+// CRUD routes
+app.get('/books', handleBookSchema);
+app.post('/books', createNewBook);
+app.delete('/books/:id', deleteBook);
+app.put('/books/:id', updateBook);
+
+
+
+
+app.listen(PORT, () => console.log(`listening on ${PORT}`));
