@@ -51,25 +51,22 @@ const BookModel = mongoose.model('BookModel', bookSchema);
 
 
 const book1 = new BookModel({
-    title: 'Think and Grow Rich',
-    description: 'A book about an explanation of the Law of Success philosophy which includes thirteen steps to riches (financial, emotional, and spiritual)',
+    title: 'sami yacoup',
+    description: 'the life of a gamer',
     status: 'in process',
-    imgURL: 'https://images-na.ssl-images-amazon.com/images/I/61AtWVLF2CL.jpg'
+    imgURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkDIrfLZiXYpG7hfqOI7xoHlJ4bwAxlALIVX44pyqqtA&s"
+    
 })
 
 const book2 = new BookModel({
-    title: 'The 7 Habits of Highly Effective People',
-    description: 'Puts forward a principle-centered approach to both personal and interpersonal effectiveness. Rather than focusing on altering the outward manifestations of your behavior and attitudes, it aims to adapt your inner core, character, and motives.',
+    title: 'firas yacoup ',
+    description: 'the life of a programmer.',
     status: 'avaliable',
-    imgURL: 'https://images-na.ssl-images-amazon.com/images/I/71bv3XdE90L.jpg'
+    imgURL:"https://e7.pngegg.com/pngimages/124/992/png-clipart-programmer-computer-programming-open-programming-language-programmer-furniture-reading.png"
+   
 })
 
-const book3 = new BookModel({
-    title: 'Rich Dad Poor Dad',
-    description: 'Robert Kiyosaki and his two dads—his real father (poor dad) and the father of his best friend (rich dad)—and the ways in which both men shaped his thoughts about money and investing. You dont need to earn a high income to be rich. Rich people make money work for them.',
-    status: 'avaliable',
-    imgURL: 'https://images-na.ssl-images-amazon.com/images/I/81bsw6fnUiL.jpg'
-})
+
 
 
 
